@@ -81,7 +81,6 @@ func _ready():
 ```python
 func _ready():
 	var gims = Gims.new()
-	var right : Array[InputEvent] = InputMap.action_get_events("ui_right")
-	print(gims.get_input_action_mapped_keys(right))
+	print(gims.get_input_action_mapped_keys("ui_right"))
     pass
 ```
