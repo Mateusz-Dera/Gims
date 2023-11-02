@@ -78,9 +78,32 @@ func _ready():
 ```
 
 ### Get list of mapped keys/buttons/axes
+#### Array
 ```python
 func _ready():
 	var gims = Gims.new()
 	print(gims.get_input_action_mapped_keys("ui_right"))
+    pass
+```
+Output:
+```
+["Key: Right", "Button: 14", "Analog: axis:0 value:1.00"]
+```
+#### String
+```python
+func _ready():
+	var gims = Gims.new()
+	print(gims.get_input_action_mapped_keys("ui_right",true,false))
+    pass
+```
+Output:
+```
+Key: Right, Button: 14, Analog: axis:0 value:1.00
+```
+#### Without names:
+```python
+func _ready():
+	var gims = Gims.new()
+	print(gims.get_input_action_mapped_keys("ui_right",false))
     pass
 ```
