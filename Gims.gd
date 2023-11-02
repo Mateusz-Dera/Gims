@@ -77,3 +77,44 @@ func input_map_load() -> void:
 			InputMap.action_add_event(action, event)
 			
 	print_debug("InputMap loaded correctly")
+	
+func get_input_action_mapped_keys(action: Array[InputEvent], type: bool = true, array: bool = true):
+	var inputs = []
+	
+	for input in action:
+		var i = str(input)
+		var split = i.split(":")
+		var val = null
+		if split[0] == "InputEventKey":
+			var t = "Key: "
+			if type == false: t = ""
+			var key = (split[1].split(",")[0]).split("(")[1]
+			val = t + key.substr(0,key.length()-1)
+		elif split[0] == "InputEventJoypadButton":
+			var t = "Button: "
+			if type == false: t = ""
+			val = t + (split[1].split(",")[0]).split("=")[1]
+		elif split[0] == "InputEventJoypadMotion":
+			var t = "Analog: "
+			if type == false: t = ""
+			val = t + "axis:" + split[1].split(",")[0].split("=")[1] + " value:" + split[1].split(",")[1].split("=")[1]
+		elif split[0] == "InputEventMouseButton":
+			var t = "Mouse button: "
+			if type == false: t = ""
+			val = t + (split[1].split(",")[0]).split("=")[1]
+		
+		if val != null:
+			inputs += [val]
+			
+	if inputs == []:
+		inputs = ["Empty"]
+		
+	if array == false:
+		var final = ""
+		for i in inputs:
+			if final != "":
+				final += ", "
+			final += i
+		return final
+			
+	return inputs
