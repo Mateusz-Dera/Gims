@@ -96,7 +96,7 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 				var t = tr("KEY_GISP_BUTTON")
 				if type == false: t = ""
 				#val = "%s: %s" % [t, input.as_text()]
-				var translation = "KEY_GISP_BUTTON_%s" % ["X"]
+				var translation = "KEY_GISP_BUTTON_%s" % input.button_index
 				val = "%s: %s" % [t, tr(translation)]
 			# translated
 			elif split[0] == "InputEventJoypadMotion":

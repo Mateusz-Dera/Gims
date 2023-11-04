@@ -17,15 +17,15 @@ KEY_GISP_MOUSE_WHEEL_RIGHT,wheel w prawo,kółko myszy w prawo
 KEY_GISP_MOUSE_THUMB_BUTTON_1,thumb button 1,przycisk boczny 1
 KEY_GISP_MOUSE_THUMB_BUTTON_2,thumb button 2,przycisk boczny 2
 
-KEY_GISP_AXIS_0_PLUS,left analog left,lewy analog w lewo
-KEY_GISP_AXIS_0_MINUS,left analog right,lewy analog w prawo
-KEY_GISP_AXIS_1_PLUS,left analog down,lewy analog w dół
-KEY_GISP_AXIS_1_MINUS,left analog up,lewy analog w górę
+KEY_GISP_AXIS_0_PLUS,left analog left,lewy drążek w lewo
+KEY_GISP_AXIS_0_MINUS,left analog right,lewy drążek w prawo
+KEY_GISP_AXIS_1_PLUS,left analog down,lewy drążek w dół
+KEY_GISP_AXIS_1_MINUS,left analog up,lewy drążek w górę
 
-KEY_GISP_AXIS_2_PLUS,right analog left,prawy analog w lewo
-KEY_GISP_AXIS_2_MINUS,right analog right,prawy analog w prawo
-KEY_GISP_AXIS_3_PLUS,right analog down,prawy analog w dół
-KEY_GISP_AXIS_3_MINUS,right analog up,prawy analog w górę
+KEY_GISP_AXIS_2_PLUS,right analog left,prawy drążek w lewo
+KEY_GISP_AXIS_2_MINUS,right analog right,prawy drążek w prawo
+KEY_GISP_AXIS_3_PLUS,right analog down,prawy drążek w dół
+KEY_GISP_AXIS_3_MINUS,right analog up,prawy drążek w górę
 
 KEY_GISP_AXIS_4_PLUS,left trigger,lewy spust
 KEY_GISP_AXIS_4_MINUS,joystick 2 left,drążek 2 w lewo
@@ -40,3 +40,30 @@ KEY_GISP_AXIS_8_PLUS,joystick 4 right,drążek 4 w prawo
 KEY_GISP_AXIS_8_MINUS,joystick 4 left,drążek 4 w lewo
 KEY_GISP_AXIS_9_PLUS,joystick 4 up,drążek 4 w górę
 KEY_GISP_AXIS_9_MINUS,joystick 4 down,drążek 4 w dół
+
+KEY_GISP_BUTTON_0,bottom button,dolny przycisk
+KEY_GISP_BUTTON_1,right button,prawy przycisk
+KEY_GISP_BUTTON_2,left button,lewy przycisk
+KEY_GISP_BUTTON_3,top button,górny przycisk
+
+KEY_GISP_BUTTON_4,back,wstecz
+KEY_GISP_BUTTON_5,guide,przewodnik
+KEY_GISP_BUTTON_6,start,start
+
+KEY_GISP_BUTTON_7,left stick,lewy drążek
+KEY_GISP_BUTTON_8,right stick,prawy drążek
+KEY_GISP_BUTTON_9,left shoulder,przycisk lewy
+KEY_GISP_BUTTON_10,right shoulder,przycisk prawy
+
+KEY_GISP_BUTTON_11,D-pad up,krzyżak w górę
+KEY_GISP_BUTTON_12,D-pad down,krzyżak w dół
+KEY_GISP_BUTTON_13,D-pad left,krzyżak w lewo
+KEY_GISP_BUTTON_14,D-pad right,krzyżak w prawo
+
+KEY_GISP_BUTTON_15,share,udostępnij
+
+KEY_GISP_BUTTON_16,paddle 1,łopatka 1
+KEY_GISP_BUTTON_17,paddle 2,łopatka 2
+KEY_GISP_BUTTON_18,paddle 3,łopatka 3
+KEY_GISP_BUTTON_19,paddle 4,łopatka 4
+KEY_GISP_BUTTON_20,touchpad,panel dotykowy
