@@ -98,9 +98,16 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 				val = "%s: %s" % [t, input.as_text()]
 			# todo
 			elif split[0] == "InputEventJoypadMotion":
-				var t = tr("KEY_GISP_ANALOG") + ": "
+				var t = tr("KEY_GISP_JOYPAD") + ": "
 				if type == false: t = ""
-				val = t + tr("KEY_GISP_AXIS") + ":" + split[1].split(",")[0].split("=")[1] + " " + tr("KEY_GISP_VALUE") + split[1].split(",")[1].split("=")[1]
+				#val = t + tr("KEY_GISP_AXIS") + ":" + split[1].split(",")[0].split("=")[1] + " " + tr("KEY_GISP_VALUE") + split[1].split(",")[1].split("=")[1]
+				#val = input.as_text().to_upper().replace(" ", "_").replace("-", "_")
+				var axis = split[1].split(",")[0].split("=")[1]
+				var value = "MINUS"
+				if float(split[1].split(",")[1].split("=")[1]) > 0:
+					value = "PLUS"
+				var translation = "KEY_GISP_AXIS_%s_%s" % [axis,value]
+				val=t + tr(translation)
 			# translated
 			elif split[0] == "InputEventMouseButton":
 				var t = tr("KEY_GISP_MOUSE")
