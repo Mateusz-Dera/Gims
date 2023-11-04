@@ -31,3 +31,12 @@ KEY_GISP_AXIS_4_PLUS,left trigger,lewy spust
 KEY_GISP_AXIS_4_MINUS,joystick 2 left,drążek 2 w lewo
 KEY_GISP_AXIS_5_PLUS,right trigger,prawy spust
 KEY_GISP_AXIS_5_MINUS,joystick 2 up,drążek 2 w górę
+
+KEY_GISP_AXIS_6_PLUS,joystick 3 right,drążek 3 w prawo
+KEY_GISP_AXIS_6_MINUS,joystick 3 left,drążek 3 w lewo
+KEY_GISP_AXIS_7_PLUS,joystick 3 up,drążek 3 w górę
+KEY_GISP_AXIS_7_MINUS,joystick 3 down,drążek 3 w dół
+KEY_GISP_AXIS_8_PLUS,joystick 4 right,drążek 4 w prawo
+KEY_GISP_AXIS_8_MINUS,joystick 4 left,drążek 4 w lewo
+KEY_GISP_AXIS_9_PLUS,joystick 4 up,drążek 4 w górę
+KEY_GISP_AXIS_9_MINUS,joystick 4 down,drążek 4 w dół
