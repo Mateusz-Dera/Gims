@@ -88,20 +88,20 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 			var split = i.split(":")
 			var val = null
 			if split[0] == "InputEventKey":
-				var t = "Key: "
+				var t = tr("KEY_KEY") + ": "
 				if type == false: t = ""
 				var key = (split[1].split(",")[0]).split("(")[1]
 				val = t + key.substr(0,key.length()-1)
 			elif split[0] == "InputEventJoypadButton":
-				var t = "Button: "
+				var t = tr("KEY_BUTTON") + ": "
 				if type == false: t = ""
 				val = t + (split[1].split(",")[0]).split("=")[1]
 			elif split[0] == "InputEventJoypadMotion":
-				var t = "Analog: "
+				var t = tr("KEY_ANALOG") + ": "
 				if type == false: t = ""
 				val = t + "axis:" + split[1].split(",")[0].split("=")[1] + " value:" + split[1].split(",")[1].split("=")[1]
 			elif split[0] == "InputEventMouseButton":
-				var t = "Mouse button: "
+				var t = tr("KEY_MOUSE_BUTTON") + ": "
 				if type == false: t = ""
 				val = t + (split[1].split(",")[0]).split("=")[1]
 			
@@ -109,7 +109,7 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 				inputs += [val]
 			
 	if inputs == []:
-		inputs = ["Empty"]
+		inputs = [tr("KEY_EMPTY")]
 		
 	if array == false:
 		var final = ""

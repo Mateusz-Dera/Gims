@@ -12,6 +12,16 @@ Allows easy saving and loading of InputMap in Godot 4.2.beta4
 ## Instalation:
 Download the latest version from the releases or clone repository. Move files to your main project folder.
 
+## Translations:
+Make sure that translations.csv imported correctly.
+
+Go to Project → Project Settings → Localization and add all generated .translation files
+
+|Supported languages|
+|:---|
+|English|
+|Polish|
+
 ## Set saving settings:
 |Type|GDScript code|Default value|
 |:---|:---|:---|
@@ -83,7 +93,7 @@ func _ready():
 func _ready():
 	var gims = Gims.new()
 	print(gims.get_input_action_mapped_keys("ui_right"))
-    pass
+	pass
 ```
 Output:
 ```
@@ -94,7 +104,7 @@ Output:
 func _ready():
 	var gims = Gims.new()
 	print(gims.get_input_action_mapped_keys("ui_right",true,false))
-    pass
+	pass
 ```
 Output:
 ```
@@ -105,5 +115,5 @@ Key: Right, Button: 14, Analog: axis:0 value:1.00
 func _ready():
 	var gims = Gims.new()
 	print(gims.get_input_action_mapped_keys("ui_right",false))
-    pass
+	pass
 ```
