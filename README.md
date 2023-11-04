@@ -43,11 +43,17 @@ Go to Project → Project Settings → Localization and add all generated .trans
 |Load|```input_map_load()```|
 
 ## Get list of mapped keys/buttons/axes
-|Type|GDScript code|Type default value|Array default value|
-|:---|:---|:---|:---|
-|Save path|```get_input_action_mapped_keys(<action>,<type>,<array>)```|```true```|```true```|
+|Type|GDScript code|Device|Type|Array|
+|:---|:---|:---|:---|:---|
+|Save path|```get_input_action_mapped_keys(<action>,<device>,<type>,<array>)```|```true```|```true```|```true```|
 
-Type and array are optional arguments. The first one is responsible for whether the names Key/Button/Analog/Mouse Button are displayed before the name of the keys/buttons/axis values/mouse buttons. The second parameter is responsible for whether the function should return an array or a string.
+#### Type and array are optional arguments: 
+
+\<device> is responsible for displaying the controller number. 
+
+\<type> is responsible for displaying the input type. 
+
+\<array> whether the function should return an array or a string.
 
 
 ## Example of use:
@@ -88,32 +94,9 @@ func _ready():
 ```
 
 ### Get list of mapped keys/buttons/axes
-#### Array
 ```python
 func _ready():
 	var gims = Gims.new()
 	print(gims.get_input_action_mapped_keys("ui_right"))
-	pass
-```
-Output:
-```
-["Key: Right", "Button: 14", "Analog: axis:0 value:1.00"]
-```
-#### String
-```python
-func _ready():
-	var gims = Gims.new()
-	print(gims.get_input_action_mapped_keys("ui_right",true,false))
-	pass
-```
-Output:
-```
-Key: Right, Button: 14, Analog: axis:0 value:1.00
-```
-#### Without names:
-```python
-func _ready():
-	var gims = Gims.new()
-	print(gims.get_input_action_mapped_keys("ui_right",false))
 	pass
 ```

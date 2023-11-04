@@ -120,7 +120,10 @@ func get_input_action_mapped_keys(action: String = "", device: bool = true, type
 					d = ""
 				else:
 					d = " %s" % str(d)
-				val = "%s%s: %s" % [t, d, translation]
+				if d or t:
+					val = "%s%s: %s" % [t, d, translation]
+				else:
+					val = translation
 				inputs += [val]
 			
 	if inputs == []:
