@@ -7,69 +7,69 @@ KEY_GISP_EMPTY,Empty,Brak
 KEY_GISP_AXIS,axis,oś
 KEY_GISP_VALUE,value,wartość
 
-KEY_GISP_MOUSE_LEFT_BUTTON,left button,lewy przycisk
-KEY_GISP_MOUSE_RIGHT_BUTTON,right button,prawy przycisk
-KEY_GISP_MOUSE_MIDDLE_BUTTON,middle button,środkowy przycisk
-KEY_GISP_MOUSE_WHEEL_UP,wheel up,kółko myszy w górę
-KEY_GISP_MOUSE_WHEEL_DOWN,wheel down,kółko myszy w dół
-KEY_GISP_MOUSE_WHEEL_LEFT,wheel left,kółko myszy w lewo
-KEY_GISP_MOUSE_WHEEL_RIGHT,wheel w prawo,kółko myszy w prawo
-KEY_GISP_MOUSE_THUMB_BUTTON_1,thumb button 1,przycisk boczny 1
-KEY_GISP_MOUSE_THUMB_BUTTON_2,thumb button 2,przycisk boczny 2
+KEY_GISP_MOUSE_LEFT_BUTTON,Left button,lewy przycisk
+KEY_GISP_MOUSE_RIGHT_BUTTON,Right button,prawy przycisk
+KEY_GISP_MOUSE_MIDDLE_BUTTON,Middle button,środkowy przycisk
+KEY_GISP_MOUSE_WHEEL_UP,Wheel up,Kółko myszy w górę
+KEY_GISP_MOUSE_WHEEL_DOWN,Wheel down,Kółko myszy w dół
+KEY_GISP_MOUSE_WHEEL_LEFT,Wheel left,Kółko myszy w lewo
+KEY_GISP_MOUSE_WHEEL_RIGHT,Wheel right,Kółko myszy w prawo
+KEY_GISP_MOUSE_THUMB_BUTTON_1,Thumb button 1,Przycisk boczny 1
+KEY_GISP_MOUSE_THUMB_BUTTON_2,Thumb button 2,Przycisk boczny 2
 
-KEY_GISP_AXIS_0_PLUS,left analog left,lewy drążek w lewo
-KEY_GISP_AXIS_0_MINUS,left analog right,lewy drążek w prawo
-KEY_GISP_AXIS_1_PLUS,left analog down,lewy drążek w dół
-KEY_GISP_AXIS_1_MINUS,left analog up,lewy drążek w górę
+KEY_GISP_AXIS_0_PLUS,Left analog left,Lewy drążek w lewo
+KEY_GISP_AXIS_0_MINUS,Left analog right,Lewy drążek w prawo
+KEY_GISP_AXIS_1_PLUS,Left analog down,Lewy drążek w dół
+KEY_GISP_AXIS_1_MINUS,Left analog up,Lewy drążek w górę
 
-KEY_GISP_AXIS_2_PLUS,right analog left,prawy drążek w lewo
-KEY_GISP_AXIS_2_MINUS,right analog right,prawy drążek w prawo
-KEY_GISP_AXIS_3_PLUS,right analog down,prawy drążek w dół
-KEY_GISP_AXIS_3_MINUS,right analog up,prawy drążek w górę
+KEY_GISP_AXIS_2_PLUS,Right analog left,Prawy drążek w lewo
+KEY_GISP_AXIS_2_MINUS,Right analog right,Prawy drążek w prawo
+KEY_GISP_AXIS_3_PLUS,Right analog down,Prawy drążek w dół
+KEY_GISP_AXIS_3_MINUS,Right analog up,Prawy drążek w górę
 
-KEY_GISP_AXIS_4_PLUS,left trigger,lewy spust
-KEY_GISP_AXIS_4_MINUS,joystick 2 left,drążek 2 w lewo
-KEY_GISP_AXIS_5_PLUS,right trigger,prawy spust
-KEY_GISP_AXIS_5_MINUS,joystick 2 up,drążek 2 w górę
+KEY_GISP_AXIS_4_PLUS,Left trigger,Lewy spust
+KEY_GISP_AXIS_4_MINUS,Joystick 2 left,Drążek 2 w lewo
+KEY_GISP_AXIS_5_PLUS,Right trigger,Prawy spust
+KEY_GISP_AXIS_5_MINUS,Joystick 2 up,Drążek 2 w górę
 
-KEY_GISP_AXIS_6_PLUS,joystick 3 right,drążek 3 w prawo
-KEY_GISP_AXIS_6_MINUS,joystick 3 left,drążek 3 w lewo
-KEY_GISP_AXIS_7_PLUS,joystick 3 up,drążek 3 w górę
-KEY_GISP_AXIS_7_MINUS,joystick 3 down,drążek 3 w dół
-KEY_GISP_AXIS_8_PLUS,joystick 4 right,drążek 4 w prawo
-KEY_GISP_AXIS_8_MINUS,joystick 4 left,drążek 4 w lewo
-KEY_GISP_AXIS_9_PLUS,joystick 4 up,drążek 4 w górę
-KEY_GISP_AXIS_9_MINUS,joystick 4 down,drążek 4 w dół
+KEY_GISP_AXIS_6_PLUS,Joystick 3 right,Drążek 3 w prawo
+KEY_GISP_AXIS_6_MINUS,Joystick 3 left,Drążek 3 w lewo
+KEY_GISP_AXIS_7_PLUS,Joystick 3 up,Drążek 3 w górę
+KEY_GISP_AXIS_7_MINUS,Joystick 3 down,Drążek 3 w dół
+KEY_GISP_AXIS_8_PLUS,Joystick 4 right,Drążek 4 w prawo
+KEY_GISP_AXIS_8_MINUS,Joystick 4 left,Drążek 4 w lewo
+KEY_GISP_AXIS_9_PLUS,Joystick 4 up,Drążek 4 w górę
+KEY_GISP_AXIS_9_MINUS,Joystick 4 down,Drążek 4 w dół
 
-KEY_GISP_BUTTON_0,bottom button,dolny przycisk
-KEY_GISP_BUTTON_1,right button,prawy przycisk
-KEY_GISP_BUTTON_2,left button,lewy przycisk
-KEY_GISP_BUTTON_3,top button,górny przycisk
+KEY_GISP_BUTTON_0,Bottom button,Dolny przycisk
+KEY_GISP_BUTTON_1,Right button,Prawy przycisk
+KEY_GISP_BUTTON_2,Left button,Lewy przycisk
+KEY_GISP_BUTTON_3,Top button,Górny przycisk
 
-KEY_GISP_BUTTON_4,back,wstecz
-KEY_GISP_BUTTON_5,guide,przewodnik
-KEY_GISP_BUTTON_6,start,start
+KEY_GISP_BUTTON_4,Back,Wstecz
+KEY_GISP_BUTTON_5,Guide,Przewodnik
+KEY_GISP_BUTTON_6,Start,Start
 
-KEY_GISP_BUTTON_7,left stick,lewy drążek
-KEY_GISP_BUTTON_8,right stick,prawy drążek
-KEY_GISP_BUTTON_9,left shoulder,przycisk lewy
-KEY_GISP_BUTTON_10,right shoulder,przycisk prawy
+KEY_GISP_BUTTON_7,Left stick,Lewy drążek
+KEY_GISP_BUTTON_8,Right stick,Prawy drążek
+KEY_GISP_BUTTON_9,Left shoulder,Lewy przycisk
+KEY_GISP_BUTTON_10,Right shoulder,Prawy przycsk
 
-KEY_GISP_BUTTON_11,D-pad up,krzyżak w górę
-KEY_GISP_BUTTON_12,D-pad down,krzyżak w dół
-KEY_GISP_BUTTON_13,D-pad left,krzyżak w lewo
-KEY_GISP_BUTTON_14,D-pad right,krzyżak w prawo
+KEY_GISP_BUTTON_11,D-pad up,Krzyżak w górę
+KEY_GISP_BUTTON_12,D-pad down,Krzyżak w dół
+KEY_GISP_BUTTON_13,D-pad left,Krzyżak w lewo
+KEY_GISP_BUTTON_14,D-pad right,Krzyżak w prawo
 
-KEY_GISP_BUTTON_15,share,udostępnij
+KEY_GISP_BUTTON_15,Share,Udostępnij
 
-KEY_GISP_BUTTON_16,paddle 1,łopatka 1
-KEY_GISP_BUTTON_17,paddle 2,łopatka 2
-KEY_GISP_BUTTON_18,paddle 3,łopatka 3
-KEY_GISP_BUTTON_19,paddle 4,łopatka 4
+KEY_GISP_BUTTON_16,Paddle 1,Łopatka 1
+KEY_GISP_BUTTON_17,Paddle 2,Łopatka 2
+KEY_GISP_BUTTON_18,Paddle 3,Łopatka 3
+KEY_GISP_BUTTON_19,Paddle 4,Łopatka 4
 
-KEY_GISP_BUTTON_20,touchpad,panel dotykowy
+KEY_GISP_BUTTON_20,Touchpad,Panel dotykowy
 
-KEY_GISP_KEY_RIGHT,right,prawo
-KEY_GISP_KEY_LEFT,lewo,left
-KEY_GISP_KEY_UP,up,góra
-KEY_GISP_KEY_DOWN,down,dół
+KEY_GISP_KEY_RIGHT,Right,Prawo
+KEY_GISP_KEY_LEFT,Left,Lewo
+KEY_GISP_KEY_UP,Up,Góra
+KEY_GISP_KEY_DOWN,Down,Dół
