@@ -7,15 +7,15 @@ KEY_GISP_EMPTY,Empty,Brak
 KEY_GISP_AXIS,axis,oś
 KEY_GISP_VALUE,value,wartość
 
-KEY_GISP_LEFT_BUTTON,left button,lewy przycisk
-KEY_GISP_RIGHT_BUTTON,right button,prawy przycisk
-KEY_GISP_MIDDLE_BUTTON,middle button,środkowy przycisk
-KEY_GISP_WHEEL_UP,wheel up,kółko myszy w górę
-KEY_GISP_WHEEL_DOWN,wheel down,kółko myszy w dół
-KEY_GISP_WHEEL_LEFT,wheel left,kółko myszy w lewo
-KEY_GISP_WHEEL_RIGHT,wheel w prawo,kółko myszy w prawo
-KEY_GISP_THUMB_BUTTON_1,thumb button 1,przycisk boczny 1
-KEY_GISP_THUMB_BUTTON_2,thumb button 2,przycisk boczny 2
+KEY_GISP_MOUSE_LEFT_BUTTON,left button,lewy przycisk
+KEY_GISP_MOUSE_RIGHT_BUTTON,right button,prawy przycisk
+KEY_GISP_MOUSE_MIDDLE_BUTTON,middle button,środkowy przycisk
+KEY_GISP_MOUSE_WHEEL_UP,wheel up,kółko myszy w górę
+KEY_GISP_MOUSE_WHEEL_DOWN,wheel down,kółko myszy w dół
+KEY_GISP_MOUSE_WHEEL_LEFT,wheel left,kółko myszy w lewo
+KEY_GISP_MOUSE_WHEEL_RIGHT,wheel w prawo,kółko myszy w prawo
+KEY_GISP_MOUSE_THUMB_BUTTON_1,thumb button 1,przycisk boczny 1
+KEY_GISP_MOUSE_THUMB_BUTTON_2,thumb button 2,przycisk boczny 2
 
 KEY_GISP_AXIS_0_PLUS,left analog left,lewy analog w lewo
 KEY_GISP_AXIS_0_MINUS,left analog right,lewy analog w prawo

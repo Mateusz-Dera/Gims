@@ -95,24 +95,24 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 			elif split[0] == "InputEventJoypadButton":
 				var t = tr("KEY_GISP_BUTTON")
 				if type == false: t = ""
-				val = "%s: %s" % [t, input.as_text()]
-			# todo
+				#val = "%s: %s" % [t, input.as_text()]
+				var translation = "KEY_GISP_BUTTON_%s" % ["X"]
+				val = "%s: %s" % [t, tr(translation)]
+			# translated
 			elif split[0] == "InputEventJoypadMotion":
-				var t = tr("KEY_GISP_JOYPAD") + ": "
+				var t = tr("KEY_GISP_JOYPAD")
 				if type == false: t = ""
-				#val = t + tr("KEY_GISP_AXIS") + ":" + split[1].split(",")[0].split("=")[1] + " " + tr("KEY_GISP_VALUE") + split[1].split(",")[1].split("=")[1]
-				#val = input.as_text().to_upper().replace(" ", "_").replace("-", "_")
 				var axis = split[1].split(",")[0].split("=")[1]
 				var value = "MINUS"
 				if float(split[1].split(",")[1].split("=")[1]) > 0:
 					value = "PLUS"
 				var translation = "KEY_GISP_AXIS_%s_%s" % [axis,value]
-				val=t + tr(translation)
+				val = "%s: %s" % [t, tr(translation)]
 			# translated
 			elif split[0] == "InputEventMouseButton":
 				var t = tr("KEY_GISP_MOUSE")
 				if type == false: t = ""
-				var translation = "%s%s" % ["KEY_GISP_", input.as_text().replace("Mouse ", "").to_upper().replace(" ", "_")]
+				var translation = "%s%s" % ["KEY_GISP_", input.as_text().to_upper().replace(" ", "_")]
 				val = "%s: %s" % [t, tr(translation)]
 			
 			if val != null:
