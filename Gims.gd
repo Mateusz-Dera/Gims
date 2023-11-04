@@ -82,8 +82,7 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 	var inputs = []
 	
 	if action != "":
-		var action_array : Array[InputEvent] = InputMap.action_get_events(action)
-		for input in action_array:
+		for input in InputMap.action_get_events(action):
 			var i = str(input)
 			var split = i.split(":")
 			var val = null
