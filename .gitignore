@@ -16,5 +16,4 @@ mono_crash.*.json
 
 # Custom
 *translation
-*csv
 *import
