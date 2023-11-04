@@ -68,3 +68,8 @@ KEY_GISP_BUTTON_18,paddle 3,łopatka 3
 KEY_GISP_BUTTON_19,paddle 4,łopatka 4
 
 KEY_GISP_BUTTON_20,touchpad,panel dotykowy
+
+KEY_GISP_KEY_RIGHT,right,prawo
+KEY_GISP_KEY_LEFT,lewo,left
+KEY_GISP_KEY_UP,up,góra
+KEY_GISP_KEY_DOWN,down,dół

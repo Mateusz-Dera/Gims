@@ -90,7 +90,12 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 			if split[0] == "InputEventKey":
 				var t = tr("KEY_GISP_KEY")
 				if type == false: t = ""
-				val = "%s: %s" % [t, input.as_text()]
+				var translation = input.as_text()
+				var id = "KEY_GISP_KEY_%s" % [translation.to_upper()]
+				if tr(id) != id:
+					translation = tr(id)
+					
+				val = "%s: %s" % [t, translation]
 			# translated
 			elif split[0] == "InputEventJoypadButton":
 				var t = tr("KEY_GISP_BUTTON")
