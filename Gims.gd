@@ -86,29 +86,33 @@ func get_input_action_mapped_keys(action: String = "", type: bool = true, array:
 			var i = str(input)
 			var split = i.split(":")
 			var val = null
+			# todo
 			if split[0] == "InputEventKey":
-				var t = tr("KEY_KEY") + ": "
+				var t = tr("KEY_GISP_KEY")
 				if type == false: t = ""
-				var key = (split[1].split(",")[0]).split("(")[1]
-				val = t + key.substr(0,key.length()-1)
+				val = "%s: %s" % [t, input.as_text()]
+			# todo
 			elif split[0] == "InputEventJoypadButton":
-				var t = tr("KEY_BUTTON") + ": "
+				var t = tr("KEY_GISP_BUTTON")
 				if type == false: t = ""
-				val = t + (split[1].split(",")[0]).split("=")[1]
+				val = "%s: %s" % [t, input.as_text()]
+			# todo
 			elif split[0] == "InputEventJoypadMotion":
-				var t = tr("KEY_ANALOG") + ": "
+				var t = tr("KEY_GISP_ANALOG") + ": "
 				if type == false: t = ""
-				val = t + "axis:" + split[1].split(",")[0].split("=")[1] + " value:" + split[1].split(",")[1].split("=")[1]
+				val = t + tr("KEY_GISP_AXIS") + ":" + split[1].split(",")[0].split("=")[1] + " " + tr("KEY_GISP_VALUE") + split[1].split(",")[1].split("=")[1]
+			# translated
 			elif split[0] == "InputEventMouseButton":
-				var t = tr("KEY_MOUSE_BUTTON") + ": "
+				var t = tr("KEY_GISP_MOUSE")
 				if type == false: t = ""
-				val = t + (split[1].split(",")[0]).split("=")[1]
+				var translation = "%s%s" % ["KEY_GISP_", input.as_text().replace("Mouse ", "").to_upper().replace(" ", "_")]
+				val = "%s: %s" % [t, tr(translation)]
 			
 			if val != null:
 				inputs += [val]
 			
 	if inputs == []:
-		inputs = [tr("KEY_EMPTY")]
+		inputs = [tr("KEY_GISP_EMPTY")]
 		
 	if array == false:
 		var final = ""
