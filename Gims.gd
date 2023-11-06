@@ -78,9 +78,11 @@ func input_map_load() -> void:
 			
 	print_debug("InputMap loaded correctly")
 
-#todo
-func is_duplicated(action: String, actions_list = [""]) -> bool:
-	return false
+func is_duplicated(action_a: String, action_b: String) -> bool:
+	var a = InputMap.action_get_events(action_a)
+	var b = InputMap.action_get_events(action_b)
+	var any = a.any(func(x) -> bool: return x in b)
+	return any
 
 func get_input_action_mapped_keys(action: String, device: bool = true, type: bool = true, array: bool = true):	
 	var inputs = []
