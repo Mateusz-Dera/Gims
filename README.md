@@ -47,6 +47,11 @@ Go to Project → Project Settings → Localization and add all generated .trans
 |:---|:---|:---|:---|:---|
 |Save path|```get_input_action_mapped_keys(<action>,<device>,<type>,<array>)```|```true```|```true```|```true```|
 
+## Is any key/button/axe from A is in B
+|Type|GDScript code|
+|:---|:---|
+|Is duplicated|```is_duplicated(<action_a>,<action_b>)```|
+
 #### Type and array are optional arguments: 
 
 \<device> is responsible for displaying the controller number. 
@@ -98,5 +103,13 @@ func _ready():
 func _ready():
 	var gims = Gims.new()
 	print(gims.get_input_action_mapped_keys("ui_right"))
+	pass
+```
+
+### Is any key/button/axe from A is in B
+```python
+func _ready():
+	var gims = Gims.new()
+	print(gims.is_duplicated("ui_right","ui_left"))
 	pass
 ```
