@@ -47,7 +47,7 @@ Go to Project → Project Settings → Localization and add all generated .trans
 |:---|:---|:---|:---|:---|
 |Save path|```get_input_action_mapped_keys(<action>,<device>,<type>,<array>)```|```true```|```true```|```true```|
 
-## Is any key/button/axe from A is in B
+## Is any key/button/axis from A is in B
 |Type|GDScript code|
 |:---|:---|
 |Is duplicated|```is_duplicated(<action_a>,<action_b>)```|
@@ -106,7 +106,7 @@ func _ready():
 	pass
 ```
 
-### Is any key/button/axe from A is in B
+### Is any key/button/axis from A is in B
 ```python
 func _ready():
 	var gims = Gims.new()
