@@ -77,54 +77,53 @@ func input_map_load() -> void:
 			InputMap.action_add_event(action, event)
 			
 	print_debug("InputMap loaded correctly")
-	
-func get_input_action_mapped_keys(action: String = "", device: bool = true, type: bool = true, array: bool = true):	
+
+#todo
+func is_duplicated(action: String, actions_list = [""]) -> bool:
+	return false
+
+func get_input_action_mapped_keys(action: String, device: bool = true, type: bool = true, array: bool = true):	
 	var inputs = []
-	
-	if action != "":
-		for input in InputMap.action_get_events(action):
-			var split = str(input).split(":")
-			var val = null
-			var d = null
-			var t = null
-			var translation = null
-			# todo
-			if split[0] == "InputEventKey":
-				translation = input.as_text()
-				var id = "KEY_GISP_KEY_%s" % [translation.to_upper()]
-				if tr(id) != id:
-					translation = tr(id)
-			# translated
-			elif split[0] == "InputEventJoypadButton":
-				t = tr("KEY_GISP_BUTTON")
-				translation = input.button_index
-				if int(input.button_index) <= 20:
-					translation = tr("KEY_GISP_BUTTON_%s" % input.button_index)
-			# translated
-			elif split[0] == "InputEventJoypadMotion":
-				t = tr("KEY_GISP_JOYPAD")
-				var axis = split[1].split(",")[0].split("=")[1]
-				var value = "MINUS"
-				if float(split[1].split(",")[1].split("=")[1]) > 0:
-					value = "PLUS"
-				translation = tr("KEY_GISP_AXIS_%s_%s" % [axis,value])
-			# translated
-			elif split[0] == "InputEventMouseButton":
-				t = tr("KEY_GISP_MOUSE")
-				translation = tr("%s%s" % ["KEY_GISP_", input.as_text().to_upper().replace(" ", "_")])
-			d = input.device
+
+	for input in InputMap.action_get_events(action):
+		var split = str(input).split(":")
+		var val = null
+		var d = null
+		var t = null
+		var translation = null
+		if split[0] == "InputEventKey":
+			translation = input.as_text()
+			var id = "KEY_GISP_KEY_%s" % [translation.to_upper()]
+			if tr(id) != id:
+				translation = tr(id)
+		elif split[0] == "InputEventJoypadButton":
+			t = tr("KEY_GISP_BUTTON")
+			translation = input.button_index
+			if int(input.button_index) <= 20:
+				translation = tr("KEY_GISP_BUTTON_%s" % input.button_index)
+		elif split[0] == "InputEventJoypadMotion":
+			t = tr("KEY_GISP_JOYPAD")
+			var axis = split[1].split(",")[0].split("=")[1]
+			var value = "MINUS"
+			if float(split[1].split(",")[1].split("=")[1]) > 0:
+				value = "PLUS"
+			translation = tr("KEY_GISP_AXIS_%s_%s" % [axis,value])
+		elif split[0] == "InputEventMouseButton":
+			t = tr("KEY_GISP_MOUSE")
+			translation = tr("%s%s" % ["KEY_GISP_", input.as_text().to_upper().replace(" ", "_")])
+		d = input.device
 			
-			if t != null and translation != null:
-				if type == false: t = ""
-				if device == false or d == -1: 
-					d = ""
-				else:
-					d = " %s" % str(d)
-				if d or t:
-					val = "%s%s: %s" % [t, d, translation]
-				else:
-					val = translation
-				inputs += [val]
+		if t != null and translation != null:
+			if type == false: t = ""
+			if device == false or d == -1: 
+				d = ""
+			else:
+				d = " %s" % str(d)
+			if d or t:
+				val = "%s%s: %s" % [t, d, translation]
+			else:
+				val = translation
+			inputs += [val]
 			
 	if inputs == []:
 		inputs = [tr("KEY_GISP_EMPTY")]
