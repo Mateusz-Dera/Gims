@@ -80,6 +80,15 @@ func input_map_load() -> void:
 
 # TODO----------------------------------------------------------------
 # limity mapowania klawiszy
+func is_valid_input_event(event, keyboard: bool = true, mouse: bool = true, joypad: bool = true) -> bool:
+	if event is InputEventKey and keyboard:
+		return true
+	elif (event is InputEventJoypadButton or event is InputEventJoypadMotion) and joypad:
+		return true
+	elif event is InputEventMouseButton and mouse:
+		return true
+		
+	return false
 
 func add_to_input_action_mapped(action: String, event: InputEvent):
 	if not InputMap.get_actions().has(action):
@@ -87,7 +96,8 @@ func add_to_input_action_mapped(action: String, event: InputEvent):
 	InputMap.action_add_event(action, event)
 
 func remove_from_input_action_mapped(action: String, event: InputEvent):
-	InputMap.action_erase_event(action,event)
+	if InputMap.get_actions().has(action):
+		InputMap.action_erase_event(action,event)
 
 func replace_one_in_input_action_mapped(action: String, add: InputEvent, delete:InputEvent):
 	remove_from_input_action_mapped(action,delete)
@@ -100,7 +110,7 @@ func is_duplicated(action_a: String, action_b: String) -> bool:
 	var any = a.any(func(x) -> bool: return x in b)
 	return any
 
-func get_input_action_mapped(action: String, device: bool = true, type: bool = true, array: bool = true):	
+func get_input_action_mapped(action: String, device: bool = true, type: bool = true, array: bool = true, physical: bool = true):	
 	var inputs = []
 
 	for input in InputMap.action_get_events(action):
@@ -112,10 +122,17 @@ func get_input_action_mapped(action: String, device: bool = true, type: bool = t
 		if split[0] == "InputEventKey":
 			t = tr("KEY_GISP_KEY")
 			translation = input.as_text()
-			var id = "KEY_GISP_KEY_%s" % [translation.to_upper()]
+			var s = translation.split("(")
+			var id = "KEY_GISP_KEY_%s" % [s[0].to_upper()]
+			id = id.replace(" ","")
 			if tr(id) != id:
 				translation = tr(id)
-				
+			else:
+				translation = s[0]
+			if translation[translation.length() - 1] == " ":
+				translation = translation.substr(0,translation.length() - 1)
+			if s.size() > 1 and physical:
+				translation = "%s (%s)" % [translation,tr("KEY_GISP_PHYSICAL")]
 		elif split[0] == "InputEventJoypadButton":
 			t = tr("KEY_GISP_BUTTON")
 			translation = input.button_index

@@ -43,23 +43,34 @@ Go to Project → Project Settings → Localization and add all generated .trans
 |Load|```input_map_load()```|
 
 ## Get list of mapped keys/buttons/axes
-|Type|GDScript code|Device|Type|Array|
-|:---|:---|:---|:---|:---|
-|Save path|```get_input_action_mapped_keys(<action>,<device>,<type>,<array>)```|```true```|```true```|```true```|
+|Type|GDScript code|Device|Type|Array|Physical|
+|:---|:---|:---|:---|:---|:---|
+|Save path|```get_input_action_mapped_keys(<action>,<device>,<type>,<array>)```|```true```|```true```|```true```|```true```|
+
+#### Type and array are optional arguments: 
+|Name|Description|
+|:---|:---|
+|```<device>```|Display the controller number.| 
+|```<type>```|Display the input type.|
+|```<array>```|Function should return an array instead of string.|
+|```<physical>```|Display information if the key is physical.|
 
 ## Is any key/button/axis from A is in B
 |Type|GDScript code|
 |:---|:---|
 |Is duplicated|```is_duplicated(<action_a>,<action_b>)```|
 
-#### Type and array are optional arguments: 
+### Input types
+|Type|GDScript code|Keyboard|Mouse|Gamepad|
+|:---|:---|:---|:---|:---|
+|Is duplicated|```is_valid_input_event(<event>,<keyboard>,<mouse>,<gamepad>)```|```true```|```true```|```true```|
 
-\<device> is responsible for displaying the controller number. 
-
-\<type> is responsible for displaying the input type. 
-
-\<array> whether the function should return an array or a string.
-
+### Remapping
+|Type|GDScript code|
+|:---|:---|
+|Add|```add_to_input_action_mapped(<action>,<event>)```|
+|Remove|```remove_from_input_action_mapped(<action>,<event>)```|
+|Replace|```replace_one_in_input_action_mapped(<action>,<event>)```|
 
 ## Example of use:
 ### Save
@@ -113,3 +124,77 @@ func _ready():
 	print(gims.is_duplicated("ui_right","ui_left"))
 	pass
 ```
+
+### Input types
+```python
+extends Node2D
+
+var gims = Gims.new()
+
+func _ready():
+	pass
+
+func _input(event):
+	if gims.is_valid_input_event(event):
+		print("Keyboard/Mouse/Joypad")
+```
+
+```python
+extends Node2D
+
+var gims = Gims.new()
+
+func _ready():
+	pass
+
+func _input(event):
+	if gims.is_valid_input_event(event,true,false,false):
+		print("Only keyboard")
+```
+```python
+extends Node2D
+
+var gims = Gims.new()
+
+func _ready():
+	pass
+
+func _input(event):
+	if gims.is_valid_input_event(event,true,false,true):
+		print("Only keyboard and joypad")
+```
+
+### Remapping
+``` python
+extends Node2D
+
+var gims = Gims.new()
+
+func _ready():
+	print(gims.get_input_action_mapped("ui_right"))
+	pass
+
+func _input(event):
+	if gims.is_valid_input_event(event):
+		gims.add_to_input_action_mapped("ui_right",event)
+		print(gims.get_input_action_mapped("ui_right"))
+		print("Added")
+```
+
+``` python
+extends Node2D
+
+var gims = Gims.new()
+
+func _ready():
+	print(gims.get_input_action_mapped("ui_right"))
+	pass
+
+func _input(event):
+	if gims.is_valid_input_event(event):
+		gims.remove_from_input_action_mapped("ui_right",event)
+		print(gims.get_input_action_mapped("ui_right"))
+		print("Removed")
+```
+
+#### TODO example for replace

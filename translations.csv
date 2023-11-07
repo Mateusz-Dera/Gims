@@ -6,6 +6,7 @@ KEY_GISP_MOUSE,Mouse,Mysz
 KEY_GISP_EMPTY,Empty,Brak
 KEY_GISP_AXIS,axis,oś
 KEY_GISP_VALUE,value,wartość
+KEY_GISP_PHYSICAL,physical,fizyczny
 
 KEY_GISP_MOUSE_LEFT_BUTTON,Left button,lewy przycisk
 KEY_GISP_MOUSE_RIGHT_BUTTON,Right button,prawy przycisk
