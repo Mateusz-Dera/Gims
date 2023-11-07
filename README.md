@@ -102,7 +102,7 @@ func _ready():
 ```python
 func _ready():
 	var gims = Gims.new()
-	print(gims.get_input_action_mapped_keys("ui_right"))
+	print(gims.get_input_action_mapped("ui_right"))
 	pass
 ```
 
