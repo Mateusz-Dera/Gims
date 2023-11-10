@@ -97,18 +97,18 @@ func is_valid_input_event(event, keyboard: bool = true, mouse: bool = true, joyp
 			
 	return false
 
-func get_input_map_event_at(action: String, position: int):
+func get_input_action_event_at(action: String, position: int):
 	if position >= 0:
 		if InputMap.get_actions().has(action):
 			if InputMap.action_get_events(action).size() -1 >= position:
 				return InputMap.action_get_events(action)[position]
 	return null
 
-func get_input_map_first_event(action: String):
-	return get_input_map_event_at(action,0)
+func get_input_action_first_event(action: String):
+	return get_input_action_event_at(action,0)
 
-func get_input_map_last_event(action: String):
-	return get_input_map_event_at(action,InputMap.action_get_events(action).size() -1)
+func get_input_action_last_event(action: String):
+	return get_input_action_event_at(action,InputMap.action_get_events(action).size() -1)
 
 func remove_from_input_action_mapped(action: String, event: InputEvent):
 	if InputMap.get_actions().has(action):
@@ -120,7 +120,7 @@ func limit(action: String):
 	elif InputMap.get_actions().has(action):
 		var size = InputMap.action_get_events(action).size()
 		while size >= gims_limit:
-			var first = get_input_map_first_event(action)
+			var first = get_input_action_first_event(action)
 			remove_from_input_action_mapped(action,first)
 			print_debug("Removed %s" % [first])
 			size = InputMap.action_get_events(action).size()

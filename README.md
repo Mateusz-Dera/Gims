@@ -59,9 +59,9 @@ Go to Project → Project Settings → Localization and add all generated `.tran
 
 |Type|GDScript code|
 |:---|:---|
-|Index|```get_input_map_event_at(<action>,<index>)```|
-|First|```get_input_map_first_event(<action>)```|
-|Last|```get_input_map_last_event(<action>)```|
+|Index|```get_input_action_event_at(<action>,<index>)```|
+|First|```get_input_action_first_event(<action>)```|
+|Last|```get_input_action_last_event(<action>)```|
 
 ## Is any key/button/axis from A is in B
 |Type|GDScript code|
