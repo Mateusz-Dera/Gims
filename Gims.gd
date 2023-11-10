@@ -119,7 +119,7 @@ func limit(action: String):
 		print_debug("Unlimited")
 	elif InputMap.get_actions().has(action):
 		var size = InputMap.action_get_events(action).size()
-		while size >= gims_limit:
+		while size >= gims_limit + 1:
 			var first = get_input_action_first_event(action)
 			remove_from_input_action_mapped(action,first)
 			print_debug("Removed %s" % [first])
