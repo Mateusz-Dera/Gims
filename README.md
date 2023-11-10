@@ -28,7 +28,7 @@ Go to Project → Project Settings → Localization and add all generated `.tran
 |Save path|```set_path(<path>")```|```user://input_map.tres```||
 |Ignore ui_|```set_ignore_ui(<bool>)```|```false```||
 |Ignore editor_|```set_ignore_ui(<bool>)```|```true```||
-|Limit of assigned keys/buttons/axes|```set_limit(<int>)```|```-1```|-1 = unlimited|
+|Limit of assigned keys/buttons/axes|```set_limit(<int>)```|```0```|less than or equal to 0 = unlimited|
 
 ## Get saving settings:
 |Type|GDScript code|
@@ -56,6 +56,12 @@ Go to Project → Project Settings → Localization and add all generated `.tran
 |```<type>```|Display the input type.|
 |```<array>```|Function should return an array instead of string.|
 |```<physical>```|Display information if the key is physical.|
+
+|Type|GDScript code|
+|:---|:---|
+|Index|```get_input_map_event_at(<action>,<index>)```|
+|First|```get_input_map_first_event(<action>)```|
+|Last|```get_input_map_last_event(<action>)```|
 
 ## Is any key/button/axis from A is in B
 |Type|GDScript code|

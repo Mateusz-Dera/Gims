@@ -17,7 +17,7 @@ class_name Gims
 var gims_path := "user://input_map.tres"
 var gims_ignore_ui_ = false
 var gims_ignore_editor_ = true
-var gims_limit = -1
+var gims_limit = 0
 
 func set_path(path: String = "user://input_map.tres") -> void:
 	gims_path = path
@@ -38,6 +38,8 @@ func get_ignore_editor() -> bool:
 	return gims_ignore_editor_
 
 func set_limit(limit: int = -1):
+	if limit < 0:
+		limit = 0
 	gims_limit = limit
 
 func get_limit():
@@ -85,8 +87,31 @@ func input_map_load() -> void:
 			
 	print_debug("InputMap loaded correctly")
 
+func get_input_map_event_at(action: String, position: int):
+	if position >= 0:
+		if InputMap.get_actions().has(action):
+			if InputMap.action_get_events(action).size() -1 >= position:
+				return InputMap.action_get_events(action)[position]
+	return null
+
+func get_input_map_first_event(action: String):
+	return get_input_map_event_at(action,0)
+
+func get_input_map_last_event(action: String):
+	return get_input_map_event_at(action,InputMap.action_get_events(action).size() -1)
+
 # TODO----------------------------------------------------------------
 # limity mapowania klawiszy
+func limit(action: String):
+	#if gims_limit == -1:
+		#return
+		
+	if InputMap.get_actions().has(action):
+		var size = InputMap.action_get_events(action).size()
+		if size > gims_limit:
+			InputMap.action_get_events(action)[0]
+		#TODO
+
 func is_valid_input_event(event, keyboard: bool = true, mouse: bool = true, joypad: bool = true) -> bool:
 	if event is InputEventKey and keyboard:
 		return true
