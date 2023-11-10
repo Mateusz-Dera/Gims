@@ -17,7 +17,7 @@ class_name Gims
 var gims_path := "user://input_map.tres"
 var gims_ignore_ui_ = false
 var gims_ignore_editor_ = true
-var gims_limit = 2
+var gims_limit = 0
 
 func set_path(path: String = "user://input_map.tres") -> void:
 	gims_path = path
@@ -87,6 +87,16 @@ func input_map_load() -> void:
 			
 	print_debug("InputMap loaded correctly")
 
+func is_valid_input_event(event, keyboard: bool = true, mouse: bool = true, joypad: bool = true) -> bool:
+	if event is InputEventKey and keyboard:
+		return true
+	elif (event is InputEventJoypadButton or event is InputEventJoypadMotion) and joypad:
+		return true
+	elif event is InputEventMouseButton and mouse:
+		return true
+			
+	return false
+
 func get_input_map_event_at(action: String, position: int):
 	if position >= 0:
 		if InputMap.get_actions().has(action):
@@ -115,26 +125,15 @@ func limit(action: String):
 			print_debug("Removed %s" % [first])
 			size = InputMap.action_get_events(action).size()
 
-# TODO----------------------------------------------------------------
-func is_valid_input_event(event, keyboard: bool = true, mouse: bool = true, joypad: bool = true) -> bool:
-	if event is InputEventKey and keyboard:
-		return true
-	elif (event is InputEventJoypadButton or event is InputEventJoypadMotion) and joypad:
-		return true
-	elif event is InputEventMouseButton and mouse:
-		return true
-		
-	return false
-
 func add_to_input_action_mapped(action: String, event: InputEvent):
 	if not InputMap.get_actions().has(action):
 		InputMap.add_action(action)
 	InputMap.action_add_event(action, event)
+	limit(action)
 
 func replace_one_in_input_action_mapped(action: String, add: InputEvent, delete:InputEvent):
 	remove_from_input_action_mapped(action,delete)
 	add_to_input_action_mapped(action,add)
-# TODO----------------------------------------------------------------
 
 func is_duplicated(action_a: String, action_b: String) -> bool:
 	var a = InputMap.action_get_events(action_a)
