@@ -10,12 +10,12 @@ Allows easy saving and loading of InputMap in Godot 4.2.beta4
 [![Version](https://img.shields.io/badge/4.2.beta4-Godot_version-blue.svg)](https://github.com/Mateusz-Dera/Gims)
 
 ## Instalation:
-Download the latest version from the releases or clone repository. Move files to your main project folder.
+Download latest version from releases or clone the repository. Move files to your main project folder.
 
 ## Translations:
-Make sure that translations.csv imported correctly.
+Make sure that `translations.csv` imported correctly.
 
-Go to Project → Project Settings → Localization and add all generated .translation files
+Go to Project → Project Settings → Localization and add all generated `.translation` files.
 
 |Supported languages|
 |:---|
@@ -23,18 +23,20 @@ Go to Project → Project Settings → Localization and add all generated .trans
 |Polish|
 
 ## Set saving settings:
-|Type|GDScript code|Default value|
-|:---|:---|:---|
-|Save path|```set_path(<path>")```|```user://input_map.tres```|
-|Ignore ui_|```set_ignore_ui(<bool>)```|```false```|
-|Ignore editor_|```set_ignore_ui(<bool>)```|```true```|
+|Type|GDScript code|Default value|Additional informations|
+|:---|:---|:---|:---|
+|Save path|```set_path(<path>")```|```user://input_map.tres```||
+|Ignore ui_|```set_ignore_ui(<bool>)```|```false```||
+|Ignore editor_|```set_ignore_ui(<bool>)```|```true```||
+|Limit of assigned keys/buttons/axes|```set_limit(<int>)```|```-1```|-1 = unlimited|
 
 ## Get saving settings:
 |Type|GDScript code|
 |:---|:---|
-|Save path|```get_path()```|
+|Save path|```get_path
 |Ignore ui_|```get_ignore_ui()```|
 |Ignore editor_|```get_ignore_ui()```|
+|Limit|```get_limit()```|
 
 ## Save & Load
 |Type|GDScript code|

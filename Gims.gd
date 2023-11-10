@@ -17,6 +17,7 @@ class_name Gims
 var gims_path := "user://input_map.tres"
 var gims_ignore_ui_ = false
 var gims_ignore_editor_ = true
+var gims_limit = -1
 
 func set_path(path: String = "user://input_map.tres") -> void:
 	gims_path = path
@@ -35,6 +36,12 @@ func set_ignore_editor(ignore: bool = true) -> void:
 
 func get_ignore_editor() -> bool:
 	return gims_ignore_editor_
+
+func set_limit(limit: int = -1):
+	gims_limit = limit
+
+func get_limit():
+	return gims_limit
 
 func input_map_exceptions(action) -> bool:
 	return !((action.begins_with("editor_") and gims_ignore_editor_) or (action.begins_with("ui_") and gims_ignore_ui_))
