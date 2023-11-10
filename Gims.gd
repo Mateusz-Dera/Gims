@@ -17,7 +17,7 @@ class_name Gims
 var gims_path := "user://input_map.tres"
 var gims_ignore_ui_ = false
 var gims_ignore_editor_ = true
-var gims_limit = 0
+var gims_limit = 2
 
 func set_path(path: String = "user://input_map.tres") -> void:
 	gims_path = path
@@ -100,18 +100,22 @@ func get_input_map_first_event(action: String):
 func get_input_map_last_event(action: String):
 	return get_input_map_event_at(action,InputMap.action_get_events(action).size() -1)
 
-# TODO----------------------------------------------------------------
-# limity mapowania klawiszy
-func limit(action: String):
-	#if gims_limit == -1:
-		#return
-		
+func remove_from_input_action_mapped(action: String, event: InputEvent):
 	if InputMap.get_actions().has(action):
+		InputMap.action_erase_event(action,event)
+	
+func limit(action: String):
+	if gims_limit == 0:
+		print_debug("Unlimited")
+	elif InputMap.get_actions().has(action):
 		var size = InputMap.action_get_events(action).size()
-		if size > gims_limit:
-			InputMap.action_get_events(action)[0]
-		#TODO
+		while size >= gims_limit:
+			var first = get_input_map_first_event(action)
+			remove_from_input_action_mapped(action,first)
+			print_debug("Removed %s" % [first])
+			size = InputMap.action_get_events(action).size()
 
+# TODO----------------------------------------------------------------
 func is_valid_input_event(event, keyboard: bool = true, mouse: bool = true, joypad: bool = true) -> bool:
 	if event is InputEventKey and keyboard:
 		return true
@@ -126,10 +130,6 @@ func add_to_input_action_mapped(action: String, event: InputEvent):
 	if not InputMap.get_actions().has(action):
 		InputMap.add_action(action)
 	InputMap.action_add_event(action, event)
-
-func remove_from_input_action_mapped(action: String, event: InputEvent):
-	if InputMap.get_actions().has(action):
-		InputMap.action_erase_event(action,event)
 
 func replace_one_in_input_action_mapped(action: String, add: InputEvent, delete:InputEvent):
 	remove_from_input_action_mapped(action,delete)
