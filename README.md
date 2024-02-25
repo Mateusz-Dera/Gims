@@ -68,7 +68,7 @@ Go to Project → Project Settings → Localization and add all generated `.tran
 ### Input types
 |Type|GDScript code|Keyboard|Mouse|Gamepad|
 |:---|:---|:---|:---|:---|
-|Is duplicated|```is_valid_input_event(<event>,<keyboard>,<mouse>,<gamepad>)```|```true```|```true```|```true```|
+|Is valid|```is_valid_input_event(<event>,<keyboard>,<mouse>,<gamepad>)```|```true```|```true```|```true```|
 
 ### Remapping
 |Type|GDScript code|
