@@ -138,7 +138,18 @@ func replace_one_in_input_action_mapped(action: String, add: InputEvent, delete:
 func is_duplicated(action_a: String, action_b: String) -> bool:
 	var a = InputMap.action_get_events(action_a)
 	var b = InputMap.action_get_events(action_b)
-	var any = a.any(func(x) -> bool: return x in b)
+	
+	var any = false
+	
+	for event_a in a:
+		if any == false:
+			for event_b in b:
+				if str(event_a) == str(event_b):
+					any = true
+					break
+		else:
+			break
+	
 	return any
 
 func get_input_action_mapped(action: String, device: bool = true, type: bool = true, array: bool = true, physical: bool = true):	
