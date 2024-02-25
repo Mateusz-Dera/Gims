@@ -1,10 +1,10 @@
 # Gims
 ## Godot InputMap Save
-Allows easy saving and loading of InputMap in Godot 4.2.beta4
+Allows easy saving and loading of InputMap in Godot 4.2.1
 
 ## Info
-[![Version](https://img.shields.io/badge/1.0-Plugin_version-orange.svg)](https://github.com/Mateusz-Dera/Gims)
-[![Version](https://img.shields.io/badge/4.2.beta4-Godot_version-blue.svg)](https://github.com/Mateusz-Dera/Gims)
+[![Version](https://img.shields.io/badge/1.1-Plugin_version-orange.svg)](https://github.com/Mateusz-Dera/Gims)
+[![Version](https://img.shields.io/badge/4.2.1-Godot_version-blue.svg)](https://github.com/Mateusz-Dera/Gims)
 
 ## Instalation:
 Download latest version from releases or clone the repository. Move files to your main project folder.
