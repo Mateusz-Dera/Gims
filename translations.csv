@@ -8,9 +8,9 @@ KEY_GISP_AXIS,axis,oś
 KEY_GISP_VALUE,value,wartość
 KEY_GISP_PHYSICAL,physical,fizyczny
 
-KEY_GISP_MOUSE_LEFT_BUTTON,Left button,lewy przycisk
-KEY_GISP_MOUSE_RIGHT_BUTTON,Right button,prawy przycisk
-KEY_GISP_MOUSE_MIDDLE_BUTTON,Middle button,środkowy przycisk
+KEY_GISP_MOUSE_LEFT_BUTTON,Left button,Lewy przycisk myszy
+KEY_GISP_MOUSE_RIGHT_BUTTON,Right button,Prawy przycisk myszy
+KEY_GISP_MOUSE_MIDDLE_BUTTON,Middle button,Środkowy przycisk
 KEY_GISP_MOUSE_WHEEL_UP,Wheel up,Kółko myszy w górę
 KEY_GISP_MOUSE_WHEEL_DOWN,Wheel down,Kółko myszy w dół
 KEY_GISP_MOUSE_WHEEL_LEFT,Wheel left,Kółko myszy w lewo
@@ -53,8 +53,8 @@ KEY_GISP_BUTTON_6,Start,Start
 
 KEY_GISP_BUTTON_7,Left stick,Lewy drążek
 KEY_GISP_BUTTON_8,Right stick,Prawy drążek
-KEY_GISP_BUTTON_9,Left shoulder,Lewy przycisk
-KEY_GISP_BUTTON_10,Right shoulder,Prawy przycsk
+KEY_GISP_BUTTON_9,Left shoulder,Lewy tylny przycisk
+KEY_GISP_BUTTON_10,Right shoulder,Prawy tylny przycisk
 
 KEY_GISP_BUTTON_11,D-pad up,Krzyżak w górę
 KEY_GISP_BUTTON_12,D-pad down,Krzyżak w dół
