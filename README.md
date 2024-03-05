@@ -3,7 +3,7 @@
 Allows easy saving and loading of InputMap in Godot 4.2.1
 
 ## Info
-[![Version](https://img.shields.io/badge/1.2-Plugin_version-orange.svg)](https://github.com/Mateusz-Dera/Gims)
+[![Version](https://img.shields.io/badge/1.3-Plugin_version-orange.svg)](https://github.com/Mateusz-Dera/Gims)
 [![Version](https://img.shields.io/badge/4.2.1-Godot_version-blue.svg)](https://github.com/Mateusz-Dera/Gims)
 
 ## Instalation:
@@ -65,17 +65,22 @@ Go to Project → Project Settings → Localization and add all generated `.tran
 |:---|:---|
 |Is duplicated|```is_duplicated(<action_a>,<action_b>)```|
 
-### Input types
+## Input types
 |Type|GDScript code|Keyboard|Mouse|Gamepad|
 |:---|:---|:---|:---|:---|
 |Is valid|```is_valid_input_event(<event>,<keyboard>,<mouse>,<gamepad>)```|```true```|```true```|```true```|
 
-### Remapping
+## Remapping
 |Type|GDScript code|
 |:---|:---|
 |Add|```add_to_input_action_mapped(<action>,<event>)```|
 |Remove|```remove_from_input_action_mapped(<action>,<event>)```|
 |Replace|```replace_one_in_input_action_mapped(<action>,<event>)```|
+
+## Vibrate all joypads
+|Type|GDScript code|Weak|Strong|Duration|
+|:---|:---|:---|:---|:---|
+|Is valid|```vibrate_all_joypads(<weak>,<strong>,<duration>)```|```float```|```float```|```0```|
 
 ## Example of use:
 ### Save
@@ -202,4 +207,13 @@ func _input(event):
 		print("Removed")
 ```
 
-#### TODO example for replace
+### Vibrate all joypads
+``` python
+extends Node2D
+
+var gims = Gims.new()
+
+func _ready():
+	gims.vibrate_all_joypads(0.25, 0.25, 0.1)
+	pass
+```

@@ -216,3 +216,7 @@ func get_input_action_mapped(action: String, device: bool = true, type: bool = t
 		return final
 			
 	return inputs
+
+func vibrate_all_joypads(weak_magnitude: float, strong_magnitude: float, duration: float = 0):
+	for i in Input.get_connected_joypads():
+		Input.start_joy_vibration(i, weak_magnitude, strong_magnitude, duration)
